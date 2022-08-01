@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Add Colleagues | app</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+  </head>
+  <body>
+    <main class="app-wrapper">     
+      <div class="card">
+        <h1>Add Colleagues</h1>
+        <form id="form">
+          <input type="text" placeholder="Enter name, Email" class="form-control" />
+          <ul class="list-group" id="results">            
+          </ul>
+          <div class="action-btns-panel">
+            <div class="form-group-btn-wrapper">
+              <button class="btn btn-secondary me-md-2" id="btnCancel"  type="button">Clear</button>
+              <button class="btn btn-primary me-md-2" id="btnAdd" type="submit">Add</button>                        
+            </div>  
+            <div class="btn-removeAll-wrapper">
+              <button class="btn btn-primary me-md-2" id="clearUsers" type="button" disabled>Remove All</button> 
+            </div>   
+          </div>                        
+        </form>
+      </div>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #F8F8FF;  
+  font-weight:14px;
+  font-weight: 400;
+  color: #212021;
+}
+
+code {
+    margin: 0;    
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+ ul, li, ol{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+ }
+ 
+.app-wrapper{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.card{
+    -webkit-box-shadow: 0 5px 15px 0 rgb(36 50 66 / 10%);
+    -moz-box-shadow: 0 5px 15px 0 rgb(36 50 66 / 10%);
+    box-shadow: 0 5px 15px 0 rgb(36 50 66 / 10%);
+    background: #fff;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    margin: 0;
+    position: relative;
+    outline: none;
+    width: 500px;
+    padding: 20px;
+    font-family: 'Noto Sans', sans-serif;
+}
+.card h1{
+  font-family: 'Merriweather', serif;
+  font-weight: 700;
+  color: #161842;
+  font-size: 1.755rem;
+  margin: 1.222rem 0;
+  padding-bottom: 0.555rem;
+}
+
+.card .form-control {
+    background-color: #FFFFFF;
+    border: 1px solid #b6b9cc;
+    padding: 12px;
+    width: 100%;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    font-family: 'Noto Sans', sans-serif;
+}
+.card .form-control:focus {
+  border: 1px solid #9699ad;
+}
+
+textarea:focus, input:focus{
+    outline: none;
+}
+[type=button], [type=reset], [type=submit], button {
+    -webkit-appearance: button;
+}
+.action-btns-panel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.form-group-btn-wrapper, .btn-removeAll-wrapper{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1.555rem;
+    margin-bottom: 1.555rem;
+}
+
+.btn{
+    display: inline-block;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: 6px 15px;
+    border-radius: 5px;
+    font-size:14px;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #7758CE;
+    border-color: #7758CE
+}
+.btn-primary:hover {
+  background-color: #6849bb;
+}
+
+.btn-secondary {
+    color: #212529;
+    background-color: #ffffff;
+    border-color: #cac5d7
+}
+.btn-secondary:hover {
+  color: #fff;
+  background-color: #b6b9cc;
+}
+
+.btn:disabled{
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+/*spacings*/
+.me-md-2 {
+    margin-right: 0.7rem!important;
+}
+
+.list-group {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    padding-left: 0;
+    margin: 1.255rem 0;
+    border-radius: 12px;
+}
+
+.list-group-item {
+    position: relative;
+    display: block;
+    padding: 0.85rem 1.25rem;
+    background-color: #f8f8ff;
+    border: 1px solid #cac5d7;
+    font-size: 13px;
+    border-radius: 5px;
+    margin: 4px 0;
+}
+
+.list-group-item .deleteIcon {
+    position: absolute;
+    right: 0;
+    padding: 10px 15px;
+    top: 0;
+    cursor: pointer;
+}
