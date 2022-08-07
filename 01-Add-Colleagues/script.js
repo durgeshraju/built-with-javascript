@@ -97,8 +97,8 @@ const isBtnRemoveEnabled = (isActive) =>{
 
 const btnClearUsersHandler = () => {
   let clearNodeElement = document.querySelector("#results");
-  clearNodeElement.innerHTML = displayUsers.splice(0, displayUsers.length);
-  clearNodeElement.innerHTML = ""
+  clearNodeElement.innerHTML = displayUsers.splice(0, displayUsers.length);  
+  clearNodeElement.innerHTML = `<h3 class="listitems-displayMsg">Hey! No Users you have removed. :(</h3>`
   console.log(`clearNodeElement ===>> ${displayUsers.length}`);
   if(displayUsers.length){
     document.querySelector("#clearUsers").disabled = true

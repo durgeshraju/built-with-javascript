@@ -176,3 +176,9 @@ textarea:focus, input:focus{
     top: 0;
     cursor: pointer;
 }
+
+.listitems-displayMsg {
+    padding: 15px 5px 0 5px;
+    font-size: 13px;
+    color: #686c86;
+}
