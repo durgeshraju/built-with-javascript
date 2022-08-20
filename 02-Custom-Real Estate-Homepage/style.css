@@ -2,6 +2,8 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
+@import url('https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css');
 
 /*Color Palette*/
 
@@ -52,3 +54,34 @@ p {
 img {
   max-width: 100%;
 }
+
+
+/* Header */
+.main-header {
+  width: 100%;
+  height: auto;
+  background-color: #ffffff;
+  padding: 0;
+  box-shadow: 0 1px 3px rgb(0 0 0 / 10%), 0 2px 2px rgb(0 0 0 / 6%),
+    0 0 2px rgb(0 0 0 / 7%);
+}
+.container{
+  /*display: flex;*/
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+/*header-topbar*/
+
+.header-topbar{
+  background-color: var(--color-primary-lt);
+  color: #ffffff;
+  padding: 10px 0;
+}
+
+/* #listOfStates::before{
+font-family: "Font Awesome 6 Free";
+font-weight: 900;
+content: "\f3c5";
+} */
