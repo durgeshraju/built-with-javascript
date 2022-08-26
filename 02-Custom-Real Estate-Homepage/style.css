@@ -29,7 +29,7 @@
 
 html,
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Poppins', sans-serif;
   line-height: 1.4;
   color: var(--color-primary-dk);
 }
@@ -39,7 +39,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 a {
-  color: var(--color-primary-lt);
+  color: var(--color-white);
 }
 
 ul {
@@ -80,8 +80,18 @@ img {
   padding: 10px 0;
 }
 
-/* #listOfStates::before{
-font-family: "Font Awesome 6 Free";
-font-weight: 900;
-content: "\f3c5";
-} */
+.lang-translation ul {
+    margin: 0;
+}
+.lang-translation li{
+  padding: 0 5px;
+  font-size: 0.822rem;
+}
+
+.lang-translation li a{
+  color: var(--color-white);
+  text-decoration: none;
+}
+.lang-translation a:hover, a:visited{
+color: var(--color-grey-lt);
+}
