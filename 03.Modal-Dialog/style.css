@@ -35,3 +35,6 @@ body {
 .opened:before {
   display: block;
 }
+.modal-dialog{
+  z-index: 99999;
+}    
