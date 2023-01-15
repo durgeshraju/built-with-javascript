@@ -20,6 +20,21 @@ const isSuccess = input => {
     formcontrol.className = "form-control success";
 }
 
+//------- Email check isValid -------
+
+const isCheckEmailValid = (input) => {
+    let regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    if(input.value.trim() === ""){
+     `${isError(input, 'Email is required')}`
+    } 
+    else if(regex.test(input.value.trim())){
+        `${isSuccess(input)}`
+    }
+    else{
+        `${isError(input, 'Email is not valid')}`
+    }
+}
+
 //------- GetFiled Label Name -------
 
 const getFiledName = input => input.id.charAt(0).toUpperCase() + input.id.slice(1);
@@ -38,5 +53,6 @@ const isCheckRequired = inputArr =>
 form.addEventListener('submit', (e) => {
     e.preventDefault();
     isCheckRequired([username, email, password, confirmPassword]);
+    isCheckEmailValid(email);
     console.log("Form Submitted");
 });
