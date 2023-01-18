@@ -20,6 +20,19 @@ const isSuccess = input => {
     formcontrol.className = "form-control success";
 }
 
+//------- GetFiled Label Name -------
+
+const getFiledName = input => input.id.charAt(0).toUpperCase() + input.id.slice(1);
+
+//-------Check all filed are required -------
+
+const isCheckRequired = inputArr => 
+   inputArr.forEach(
+      input => input.value.trim() === '' 
+      ? isError(input, `${getFiledName(input)} is required`)
+      : isSuccess(input)
+);
+
 //------- Email check isValid -------
 
 const isCheckEmailValid = (input) => {
@@ -35,18 +48,22 @@ const isCheckEmailValid = (input) => {
     }
 }
 
-//------- GetFiled Label Name -------
+//------- Username check with `min & max characters` 
 
-const getFiledName = input => input.id.charAt(0).toUpperCase() + input.id.slice(1);
-
-//-------Check all filed are required -------
-
-const isCheckRequired = inputArr => 
-   inputArr.forEach(
-      input => input.value.trim() === '' 
-      ? isError(input, `${getFiledName(input)} is required`)
-      : isSuccess(input)
-);
+const checkUsernameLength = (input, min, max) => {
+    if(input.value.trim() === ""){
+        isError(`${input} ${getFiledName(input)} is required`)
+    }
+    else if(input.value.length < min){       
+        isError(input, `${getFiledName(input)} must be at least ${min} characters`);
+    }
+    else if(input.value.length > max){
+         isError(input, `${getFiledName(input)} must be less than ${max} characters`);
+    }
+    else{
+        `${isSuccess(input)}`
+    }
+}
 
 //------- Event listeners -------
 
@@ -54,5 +71,5 @@ form.addEventListener('submit', (e) => {
     e.preventDefault();
     isCheckRequired([username, email, password, confirmPassword]);
     isCheckEmailValid(email);
-    console.log("Form Submitted");
+    checkUsernameLength(username, 3, 16);    
 });
