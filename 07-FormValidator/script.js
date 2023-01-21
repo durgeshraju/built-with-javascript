@@ -3,6 +3,7 @@ const username = document.getElementById('username');
 const email = document.getElementById('email');
 const password = document.getElementById('password');
 const confirmPassword = document.getElementById('confirmPassword');
+const regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/; // Email Regex
 
 //------- Show `Error` -------
 
@@ -32,25 +33,16 @@ const isCheckRequired = inputArr =>
       ? isError(input, `${getFiledName(input)} is required`)
       : isSuccess(input)
 );
-
 //------- Email check isValid -------
 
-const isCheckEmailValid = (input) => {
-    let regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-    if(input.value.trim() === ""){
-     `${isError(input, 'Email is required')}`
-    } 
-    else if(regex.test(input.value.trim())){
-        `${isSuccess(input)}`
-    }
-    else{
-        `${isError(input, 'Email is not valid')}`
-    }
-}
+const isEmailCheck = input => input.value.trim() === "" ? `${isError(input, 'Email is required')}` : regex.test(input.value.trim()) ? `${isSuccess(input)}` : `${isError(input, 'Email is not valid')}`
+
+const isCheckEmailValid = input => isEmailCheck(input);
+
 
 //------- Username check with `min & max characters` 
 
-const checkUsernameLength = (input, min, max) => {
+const checkUsernameLength = (input, min, max) => {    
     if(input.value.trim() === ""){
         isError(`${input} ${getFiledName(input)} is required`)
     }
@@ -65,11 +57,16 @@ const checkUsernameLength = (input, min, max) => {
     }
 }
 
+//------- Password & confirmPassword check -------
+
+const checkPasswordsMatch = (input, input2) => input.value !== input2.value && isError(input2, "Passwords do not match");
+
 //------- Event listeners -------
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
     isCheckRequired([username, email, password, confirmPassword]);
     isCheckEmailValid(email);
-    checkUsernameLength(username, 3, 16);    
+    checkUsernameLength(username, confirmPassword, 3, 16);    
+    checkPasswordsMatch(password, confirmPassword);
 });
